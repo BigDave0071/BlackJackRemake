@@ -1,7 +1,7 @@
 #ifndef CARD_H
 #define CARD_H
 
-struct card {
+struct Card {
   char value;
   char suit;
 }
