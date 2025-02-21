@@ -2,8 +2,14 @@
 #define CARD_H
 
 struct Card {
-  char value;
+  int value;
   char suit;
-}
+};
+
+void make_shoe(int decks);
+
+// debug functions
+
+void print_shoe(void);
 
 #endif
