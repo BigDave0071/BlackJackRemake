@@ -4,8 +4,12 @@
 
 
 int main(void) {
-  make_shoe(1);
-  print_shoe();
+  card_set_decks(2);
+  card_make_shoe();
+  card_print_shoe();
+  card_shuffle_shoe();
+  card_print_shoe();
+
 
   return 0;
 }

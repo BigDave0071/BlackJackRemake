@@ -18,14 +18,8 @@ static int decks;
 /* public */
 
 void card_set_decks(int decks_amount) {
-  // can be between 1 and 8
-  if(decks_amount > 0 && decks_amount < 9) {
-    decks = decks_amount;
-  } else {
-    printf("Error (card_set_decks): invlid amount of decks as parameter (must be between 1 and 8).\n");
-  }
+  decks = decks_amount;
 }
-
 
 void card_make_shoe(void) {
   free(shoe);
@@ -100,15 +94,12 @@ int card_get_ivalue(struct Card card) {
 }
 
 
-int card_get_ivalue_total(struct Card *cards, int cards_length) {
+int card_get_ivalue_total(struct Card *cards) {
   if(cards != NULL) {
-    int ivalue_total = 0;
-    for(int i = 0; i < cards_length; i++) {
-      ivalue_total += card_get_ivalue(cards[i]);
-    }
-    return ivalue_total;
+    cards_length = sizeof(cards) / sizeof(cards[0]);
+    return cards_length;
   } else {
-    printf("Error (card_get_ivalue_total): empty cards (ptr) as parameter.\n");
+    printf("Error (card_get_ivalue_total): empty cards (ptr) as parameter.\n")
     return 0;
   }
 }
@@ -120,13 +111,9 @@ void card_print_shoe(void) {
     printf("%d, %c, %d\n", shoe[i].value, shoe[i].suit, i);
   }
 
-  /*struct Card *deck;*/
-  /*deck = (struct Card *)malloc(sizeof(struct Card)*2);*/
-  /*struct Card card1 = {5, 'C'};*/
-  /*struct Card card2 = {5, 'C'};*/
-  /*deck[0] = card1;*/
-  /*deck[1] = card2;*/
-  /*printf("%d\n", card_get_ivalue_total(shoe, shoe_size));*/
+  struct Card *deck;
+  deck = (struct Card *)malloc(sizeof(struct Card)*2);
+  printf("%d\n")
 }
 
 
