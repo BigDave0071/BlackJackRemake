@@ -6,9 +6,6 @@ struct Card {
   char suit;
 };
 
-/* private */
-
-
 /* public */
 
 void card_set_decks(int decks_amount);

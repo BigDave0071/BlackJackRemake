@@ -6,15 +6,9 @@
 
 static struct Card *dealer_cards;
 
-/* private */
-
-
 /* public */
 
-void dealer_deal_cards(void);
-
+// TODO
 struct Card *dealer_get_cards(void);
-
 int dealer_get_value(bool hidden);
-
 void dealer_make_moves(void);
